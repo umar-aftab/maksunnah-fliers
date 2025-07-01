@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
+import React, { useEffect, useState, FormEvent } from 'react';
 import { supabase } from '@/utils/supabaseClient';
 
 interface Flyer {
@@ -65,10 +65,16 @@ export default function AdminFlyersPage() {
     }
 
     // 2. Get public URL
+    const storagePath = storageData?.path;
+    if (!storagePath) {
+        alert('Failed to get storage path');
+        setUploading(false);
+        return;
+    }
     const { data: urlData } = supabase
-      .storage
-      .from('flyers')
-      .getPublicUrl(storageData?.path!);
+        .storage
+        .from('flyers')
+        .getPublicUrl(storagePath);
     const publicUrl = urlData?.publicUrl;
 
     // 3. Save metadata to table
