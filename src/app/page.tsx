@@ -35,6 +35,9 @@ export default function FlyersPage() {
 
   return (
     <div className="max-w-2xl mx-auto py-10 px-4 bg-[#F7F5F2] min-h-screen">
+      <div className="flex flex-col items-center mb-6">
+          <img src="/logo.png" alt="Maktabah As Sunnah Logo" className="h-20 w-auto mb-2" />
+      </div>
       <h1 className="text-4xl font-bold mb-8 text-[#3F3D56]">Our Latest Flyers</h1>
       {loading && <div className="text-center text-lg text-[#A24C44]">Loading…</div>}
       <div className="space-y-4">

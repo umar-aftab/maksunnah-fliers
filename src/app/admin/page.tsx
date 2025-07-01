@@ -109,6 +109,9 @@ export default function AdminFlyersPage() {
   if (!isAuthed) {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center bg-[#F7F5F2]">
+        <div className="flex flex-col items-center mb-6">
+            <img src="/logo.png" alt="Maktabah As Sunnah Logo" className="h-20 w-auto mb-2" />
+        </div>
         <form onSubmit={handleLogin} className="p-8 bg-white rounded-lg shadow-xl space-y-6 border border-[#C1A260]">
           <h1 className="text-3xl font-bold text-[#3F3D56]">Admin Login</h1>
           <input
@@ -131,6 +134,9 @@ export default function AdminFlyersPage() {
 
   return (
     <div className="max-w-2xl mx-auto py-10 px-4 bg-[#F7F5F2] min-h-screen">
+        <div className="flex flex-col items-center mb-6">
+            <img src="/logo.png" alt="Maktabah As Sunnah Logo" className="h-20 w-auto mb-2" />
+        </div>
       <h1 className="text-4xl font-bold mb-8 text-[#3F3D56]">Upload Flyers</h1>
       <form
         onSubmit={handleAddFlyer}
